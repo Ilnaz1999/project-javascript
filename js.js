@@ -1,20 +1,36 @@
+let box = document.getElementById('box'),
+    btn = document.getElementsByTagName('button'),
+    circle = document.getElementsByClassName('circle'),
+    heart = document.querySelectorAll('.heart'),
+    oneHeart = document.querySelector('.heart'),
+    wrapper = document.querySelector('.wrapper');
 
-// const app = ['ilna', '1', 'false']
+box.style.backgroundColor = 'blue';
+btn[1].style.borderRadius = '100%';
 
-// console.log(app[0])
+circle[0].style.backgroundColor = 'red';
+circle[1].style.backgroundColor = 'yellow';
+circle[2].style.backgroundColor = 'green';
 
-// // alert("Hello World")
-// // const perl = confirm("are you here?");
+// for (let i = 0; i < heart.length; i++) {
+//     heart[i].style.backgroundColor = 'blue';
+// }
 
-// // console.log(perl);
- 
-// const milf = prompt("Есть ли вам 18?", "Yes");
+// heart.forEach(function(item,i,hearts) {
+//     item.style.backgroundColor = "black";
+// });
 
-// console.log(typeof(milf));
+let div = document.createElement('div');
+    text = document.createTextNode("Тут был я");
 
-let Input = 10,
-        referf = 11;
+    div.classList.add('black');
 
-
-console.log(Input++);
-console.log(referf--);
+    // div.innerHTML = "<h1>Hello World!</h1>"
+    div.textContent = "Hello World";
+    // document.body.appendChild(div);
+    wrapper.appendChild(div);
+     document.body.insertBefore(div, circle[0]);
+     document.body.removeChild(circle[1]);
+     wrapper.removeChild(heart[1]);
+     document.body.replaceChild(btn[1], circle[1]);
+console.log(div);
