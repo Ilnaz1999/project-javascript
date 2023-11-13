@@ -1,36 +1,25 @@
-let box = document.getElementById('box'),
-    btn = document.getElementsByTagName('button'),
-    circle = document.getElementsByClassName('circle'),
-    heart = document.querySelectorAll('.heart'),
-    oneHeart = document.querySelector('.heart'),
-    wrapper = document.querySelector('.wrapper');
+'use strict';
 
-box.style.backgroundColor = 'blue';
-btn[1].style.borderRadius = '100%';
+let menu = document.getElementsByClassName("menu")[0],
+    menuItem = document.getElementsByClassName("menu-item"),
+    title = document.getElementById("title"),
+    adv = document.getElementsByClassName("adv")[0],
+    promptforApple = document.querySelector("#prompt"),
+    menuItemLi = document.createElement("li");
 
-circle[0].style.backgroundColor = 'red';
-circle[1].style.backgroundColor = 'yellow';
-circle[2].style.backgroundColor = 'green';
+menu.insertBefore(menuItem[2], menuItem[1]);                    // Поменяли местами два элемента
 
-// for (let i = 0; i < heart.length; i++) {
-//     heart[i].style.backgroundColor = 'blue';
-// }
+menuItemLi.classList.add("menu-item");                          // Добавляем новый li, с классом и текстом
+menuItemLi.textContent = "Пятый элемент";
+menu.appendChild(menuItemLi);
 
-// heart.forEach(function(item,i,hearts) {
-//     item.style.backgroundColor = "black";
-// });
 
-let div = document.createElement('div');
-    text = document.createTextNode("Тут был я");
+document.body.style.backgroundImage = "url('img/apple_true.jpg')";  // Меняем фон
 
-    div.classList.add('black');
 
-    // div.innerHTML = "<h1>Hello World!</h1>"
-    div.textContent = "Hello World";
-    // document.body.appendChild(div);
-    wrapper.appendChild(div);
-     document.body.insertBefore(div, circle[0]);
-     document.body.removeChild(circle[1]);
-     wrapper.removeChild(heart[1]);
-     document.body.replaceChild(btn[1], circle[1]);
-console.log(div);
+title.textContent = "Мы продаем только подлинную технику Apple"    // Заменить текст
+
+adv.remove();                                                   // Удалить рекламу со страницы
+
+let yourOpinion = prompt("Ваше отношение к технике Apple?");   // Отношение к технике Apple
+promptforApple.textContent = yourOpinion;
